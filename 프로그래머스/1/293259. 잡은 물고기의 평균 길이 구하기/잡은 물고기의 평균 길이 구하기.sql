@@ -1,0 +1,3 @@
+SELECT 
+    ROUND(AVG(GREATEST(COALESCE(length, 10), 10)), 2) AS average_length
+FROM FISH_INFO;
