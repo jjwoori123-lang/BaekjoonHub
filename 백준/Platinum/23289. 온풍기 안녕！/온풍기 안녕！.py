@@ -42,7 +42,7 @@ def air():
         
         while q:
             qx, qy, val = q.popleft()
-            if val <= 1: continue
+            if val == 0: break
 
             # d=1:우, 2:좌, 3:상, 4:하
             if d == 1: # 오른쪽 확산
