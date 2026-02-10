@@ -8,6 +8,7 @@ def dijkstr(s,e):
         if cost > visit[start]: continue
         for nxt, ncost in graph[start]:
             ndist = ncost + cost
+            if visit[nxt] < ndist: continue
             if visit[nxt] > ndist:
                 visit[nxt] = ndist
                 heapq.heappush(q, (ndist, nxt))
