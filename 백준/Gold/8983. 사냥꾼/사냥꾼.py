@@ -1,3 +1,5 @@
+import sys
+input = sys.stdin.readline
 def cal_dist(x,x1,y1):
     return abs(x-x1) + y1
 n,m,l = map(int, input().split())
@@ -9,11 +11,11 @@ for i, j in deer:
     a,b = 0, len(gun)-1
     while a<=b:
         mid = (a+b)//2
-        if cal_dist(gun[mid], i,j) <= l:
+        if gun[mid] > i + l - j:
+            b = mid-1
+        elif gun[mid] < i - l + j:
+            a = mid+1
+        else:
             cnt+=1
             break
-        elif gun[mid]- i + j > l:
-            b = mid-1
-        else:
-            a = mid+1
 print(cnt)
