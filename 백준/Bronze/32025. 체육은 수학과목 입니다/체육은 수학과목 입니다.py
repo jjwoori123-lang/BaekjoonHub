@@ -1,3 +1,5 @@
-h = int(input())
-w = int(input())
-print(int(min(h,w)/2*100))
+n = int(input())
+m = int(input())
+
+res = min(100 * n, 100 * m)
+print(int(res//2))
